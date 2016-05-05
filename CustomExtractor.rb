@@ -31,4 +31,3 @@ class CustomExtractor
   end
 
 end
-$logger.info devil_hash
