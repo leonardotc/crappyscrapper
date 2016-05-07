@@ -3,7 +3,7 @@ require 'nokogiri'
 
 class CustomExtractor
 
-  include Commons
+  include Helper
 
   def init
 
@@ -16,11 +16,6 @@ class CustomExtractor
       body = html_response uri
 
     end
-  end
-
-  def html_response uri
-    res = Net::HTTP.get_response uri
-    res.body
   end
 
   def enrich link

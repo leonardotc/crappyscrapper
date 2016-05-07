@@ -1,7 +1,6 @@
 class LinkExtractor
 
-  def init
-  end
+  include Helper
 
   def all_devil_pages base_page
 
@@ -15,7 +14,7 @@ class LinkExtractor
       relative = URI link
       uri.path = relative.path
       uri.query = relative.query
-      $logger.info uri
+      $log.info uri.to_s
       links << uri.to_s
       page = Nokogiri::HTML html_response uri
 
