@@ -31,8 +31,12 @@ class DevilExtractor
   end
   
   def extract_node( html_body, id )
-    html_body.xpath("//div[@id='mw-content-text']/h3/span[@id='#{id}']/../following-sibling::table[1]") || 
-      html_body.xpath("//div[@id='mw-content-text']/h3/span[@id='#{id}_2']/../following-sibling::table[1]")
+    html_body.xpath("//span[@id='Stats']/../following-sibling::h3/span[@class='mw-headline' and @id='#{id}_2']/../following-sibling::table[1]") ||
+      html_body.xpath("//span[@id='Stats']/../following-sibling::h3/span[@class='mw-headline' and @id='#{id}']/../following-sibling::table[1]")
+    
+    #html_body.xpath("//span[@class='mw-headline' and @id='#{id}_2']/../following-sibling::table[1]") || 
+    #  html_body.xpath("//span[@class='mw-headline' and @id='#{id}']/../following-sibling::table[1]")
+    
   end
   
   def extract_data( node, id )
